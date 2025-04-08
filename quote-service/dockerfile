@@ -1,0 +1,23 @@
+# base go image
+FROM golang:1.21.3 as builder
+
+RUN mkdir /app
+
+COPY . /app
+
+WORKDIR /app
+
+RUN CGO_ENABLED=0 go build -o quoteApp ./cmd
+
+RUN chmod +x /app/quoteApp
+
+# build
+FROM alpine:latest
+
+RUN mkdir /app
+    
+COPY --from=builder /app/quoteApp /app
+
+EXPOSE 8091
+
+CMD [ "/app/quoteApp" ]

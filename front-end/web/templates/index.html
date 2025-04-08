@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quote Viewer</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin-top: 50px;
+        text-align: center;
+      }
+      .quote-box {
+        background-color: #f0f0f0;
+        padding: 20px;
+        margin: auto;
+        width: 60%;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quote-box">
+      <h2>Quote Generator</h2>
+      <p>"{{.Quote}}"</p>
+      <a href="/">Get Quote</a>
+      <a href="/random">Get Random Quote</a>
+    </div>
+  </body>
+</html>
